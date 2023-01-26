@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;   
+}
+
+:root {
+    --cellColor: #999999;
+    --falseFlag: #ff9a9a;
+    --liteGray: #dcdcdc;
+    --openCell: #f5f5f5;
+    --button: #cdcdcd;
+    --border: #2a2a2a;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+.interface {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    border: 1px solid var(--border);
+    background-color: var(--liteGray);
+    border-radius: 5px;
+    
+    user-select: none;
+    cursor: default;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    min-height: 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.timer::before {
+    content: '🕛';
+}
+
+.timer {
+    width: 30%;
+}
+
+.message {
+    width: 40%;
+}
+
+.flags::before {
+    content: '🚩';
+}
+
+.flags {
+    width: 30%;
+}
+
+.place_to_play{
+    width: 225px;
+    min-height: 225px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    background-color: var(--cellColor);
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.start {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background-color: var(--button);
+    margin: 15px auto 5px auto;
+}
+
+.cell {
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    background-color: var(--cellColor);
+    border: 1px solid var(--border);
+}
+
+.opened {
+    background-color: var(--openCell);
+}
+
+.flag {
+    background: url(../icons/flag.png) center center / cover no-repeat var(--cellColor);
+}
+
+.falseFlag {
+    background: url(../icons/flag.png) center center / cover no-repeat var(--falseFlag);
+}
+
+.mine {
+    background: url(../icons/mine.png) center center / cover no-repeat var(--openCell);
+}
